@@ -7,6 +7,7 @@
 <html>
 <head>
 	<meta charset="EUC-KR">
+	
 </head>
 <h3>SELECT</h3>
 <body>
