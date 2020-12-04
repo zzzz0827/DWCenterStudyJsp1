@@ -23,5 +23,7 @@
 	catch (Exception e) {
 		e.printStackTrace();
 	}
+	
+	response.sendRedirect("../index.jsp");
 
 %>
