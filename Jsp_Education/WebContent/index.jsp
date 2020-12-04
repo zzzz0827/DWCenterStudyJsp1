@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+	<meta charset="EUC-KR">
 <title>이정훈</title>
+<link rel="stylesheet" href="../css/css.css">
 </head>
 <%
 String section = request.getParameter("section") != null ? request.getParameter("section") : "";
@@ -25,6 +27,8 @@ String section = request.getParameter("section") != null ? request.getParameter(
 	case "select_sales":
 		%><%@include file="page/select_sales.jsp" %><%
 		break;
+	case "findPizza" :
+		%><%@include file="page/findPizza.jsp" %><%
 	default:
 		%><%@include file="static/index.jsp" %><%
 	}
