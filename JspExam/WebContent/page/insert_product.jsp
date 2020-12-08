@@ -18,12 +18,12 @@
 		Statement stmt = conn.createStatement();
 %>
 
-<form action="action/insert_data.jsp" method="post" name="input_form">
+<form action="action/insert_product_action.jsp" method="get" name="input_form">
 	<table border="1">
 		<tr>
 			<td>판매한 상품</td>
 			<td>
-				<select name="productName">
+				<select name="productId">
 					<%
 						Statement stmt_product = conn.createStatement();
 						ResultSet rs = stmt_product.executeQuery("SELECT PRODUCT_ID, name FROM PRODUCT");
@@ -38,15 +38,15 @@
 		</tr>
 		<tr>
 			<td>수량</td>
-			<td><input type="number" name="amount"/></td>
+			<td><input type="number" name="amount"></td>
 		</tr>
 		<tr>
 			<td>판매 날짜</td>
-			<td><input type="date" name="purchaseDate"/></td>
+			<td><input type="date" name="purchaseDate"></td>
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="등록하기" onclick="reset_form()"/>
+				<input type="submit" value="등록하기"/>
 				<input type="button" value="다시쓰기" onclick="reset_form()"/>
 			</td>
 		</tr>
