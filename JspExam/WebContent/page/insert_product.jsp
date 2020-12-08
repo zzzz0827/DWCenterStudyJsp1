@@ -26,10 +26,10 @@
 				<select name="productName">
 					<%
 						Statement stmt_product = conn.createStatement();
-						ResultSet rs = stmt_product.executeQuery("SELECT name FROM PRODUCT");
+						ResultSet rs = stmt_product.executeQuery("SELECT PRODUCT_ID, name FROM PRODUCT");
 						while (rs.next()) {
 							%>
-								<option value="<%=rs.getString(1) %>"> <%=rs.getString(1) %></option>
+								<option value="<%=rs.getInt(1) %>"> <%=rs.getString(2) %></option>
 							<%
 						}
 					%>
@@ -46,7 +46,7 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="등록하기"/>
+				<input type="submit" value="등록하기" onclick="reset_form()"/>
 				<input type="button" value="다시쓰기" onclick="reset_form()"/>
 			</td>
 		</tr>
