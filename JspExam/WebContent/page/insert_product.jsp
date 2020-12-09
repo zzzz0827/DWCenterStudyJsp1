@@ -7,6 +7,22 @@
 	function reset_form() {
 		document.input_form.reset()
 	}
+	
+	function submit_form() {
+		if(document.input_form.amount.value === "") {
+			alert("수량을 입력해 주세요.")
+			document.input_form.amount.focus()
+			return
+		}
+		if(document.input_form.purchaseDate.value === "") {
+			document.input_form.purchaseDate.focus()
+			alert("날짜를 입력해 주세요.")
+			return
+		}
+		
+		alert("등록 완료.")
+		document.input_form.submit()
+	}
 </script>
 
 <%
@@ -18,7 +34,7 @@
 		Statement stmt = conn.createStatement();
 %>
 
-<form action="action/insert_product_action.jsp" method="get" name="input_form">
+<form action="action/insert_product_action.jsp" method="post" name="input_form">
 	<table border="1">
 		<tr>
 			<td>판매한 상품</td>
@@ -46,7 +62,7 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="등록하기"/>
+				<input type="button" value="등록하기" onclick="submit_form()"/>
 				<input type="button" value="다시쓰기" onclick="reset_form()"/>
 			</td>
 		</tr>
